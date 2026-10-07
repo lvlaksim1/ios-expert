@@ -1,7 +1,7 @@
 {
   "schema": "ios-expert-runtime-separation-canary-v1",
   "gate_id": "IOS-EXPERT-RUNTIME-SEPARATION-001",
-  "phase": "P1_READY",
+  "phase": "P2_READY",
   "qualification_effect": "NONE",
   "rules": {
     "one_wake_one_fresh_runtime": true,
@@ -14,11 +14,11 @@
     "require_P_intersection_S_empty": true,
     "concrete_task_frozen_before_solver": true
   },
-  "P": [],
+  "P": ["IOSRS-P1-20261008T011505-a73c91e4"],
   "S": [],
   "E": [],
   "preparation": {
-    "seed": null,
+    "seed": ["D","A","C","B"],
     "task": null,
     "frozen": false,
     "frozen_by_runtime": null
@@ -26,5 +26,10 @@
   "solution": {
     "s1_observation": null,
     "final_answer": null
+  },
+  "last_transition": {
+    "role": "P1",
+    "runtime_id": "IOSRS-P1-20261008T011505-a73c91e4",
+    "classification": "PREPARATION_SEED_CREATED"
   }
 }
