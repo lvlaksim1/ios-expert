@@ -16,7 +16,7 @@ Updated: 2026-10-07
 - confirmed skills: none yet
 - confirmed competence: none yet
 - operational entrustment: D0
-- PP-RM/GitHub atomicity/recovery gate: RUNNING
+- PP-RM/GitHub atomicity/recovery gate: RUNNING; first contention run proves one reservation winner but post-reservation effect/evidence continuation is NOT_PROVEN
 - hidden-assessment access-separation gate: BLOCKED_CAPABILITY
 - real summative assessment: BLOCKED until both gates pass
 - lifecycle state: `READY_FOR_INFRASTRUCTURE_GATE_TESTS`
