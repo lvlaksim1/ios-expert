@@ -1,28 +1,35 @@
-# Целевой профессиональный профиль iOS/Darwin — кандидат 0.1
+# Целевой профессиональный профиль iOS/Darwin — кандидат 0.2
 
 Статус: `DRAFT_OWNER_REVIEW_REQUIRED`
-Карта профессии: `0.2.0`
+Карта профессии: `0.3.0`
 
-## Цель первой подготовки
-Не пытаться сразу сертифицировать всю iOS-профессию. Первая программа должна доказать базовую способность к безопасной системной диагностике на новых задачах.
+## Назначение
+Первая диагностика должна широко проверить базовые системные области профессии, а не продолжать наследованный проектный уклон. Конкретная первая учебная программа выбирается только после диагностики по доказанным пробелам.
 
-## Обязательные действия первой волны
-- A1 secure-boot/recovery chain analysis — целевой допуск D1;
-- B1 XNU subsystem fault localization — D1;
-- C1/C2 IOKit matching + registry analysis — D2 для read-only диагностики;
-- D1 APFS/root-mount diagnostic analysis — D2 для read-only диагностики;
-- E1/E2 code-signing/runtime-policy analysis — D1, security-sensitive;
-- F1/F2 early userland/launchd/dyld analysis — D1;
-- H1/H2/H3 evidence and research-method discipline — D2.
+## Обязательное покрытие исходной диагностики
+- A1/A4 — secure boot/recovery и различение boot/restore/personalization flows;
+- B1/B2 — XNU fault localization и version-aware source reasoning;
+- C1/C2 — IOKit matching + IORegistry/DeviceTree analysis;
+- D1/D4 — APFS/root-mount diagnosis и граница documented/empirical;
+- E1/E2/E4 — code signing, runtime policy и sandbox-layer distinction;
+- F1/F2/F4 — early userland, dyld и launchd/Mach/XPC service diagnosis;
+- H1/H2/H3/H4 — evidence discipline, tool selection, observe-before-mutate и transfer boundaries;
+- I1/I2/I3 — firmware/binary/system-artifact literacy.
 
-## Вторичная волна
-- C3 full storage transport chain;
-- D2/D3 APFS structural comparison;
-- G1/G2 hardware security/Data Protection;
+## Вторичная диагностика
+- C3 full hardware/storage transport chain;
+- D2/D3 structural APFS comparisons;
 - E3 trust-cache/platform-policy;
-- H4 transfer between physical/virtual environments.
+- G1/G2/G3 hardware security/Data Protection boundaries;
+- I4 source -> transformation -> output semantic-equivalence reasoning.
 
-## Критерии достаточности первой подготовки
-Для каждого обязательного действия нужны: знание -> практическая демонстрация -> перенос на новую задачу -> интеграционная проверка. Мигрированная история Project Manager может служить исходным доказательством/кандидатом, но не заменяет новую демонстрацию самого `ios-expert`.
+## Допуск
+Все действия остаются D0 до отдельного решения. Диагностические read-only упражнения не являются операционным D1-D3.
 
-Профессиональная компетентность уровня реальной устойчивой работы на этом этапе не заявляется: для неё требуются отдельные реальные случаи и заранее утверждённая `competence-evidence-spec`.
+## Доказательства
+Для подтверждения способности нужны новые задачи, не являющиеся простым повторением мигрированных кейсов. История старого Project Manager может формировать гипотезы, тренировочные примеры и регрессии, но не заменяет новую демонстрацию `ios-expert`.
+
+## Выбор первой учебной программы
+После baseline-assessment строится gap-map. Первая программа выбирается по зависимости, величине пробела, профессиональной значимости и риску; частота старого проектного опыта не является самостоятельным приоритетом.
+
+Профессиональная компетентность реальной устойчивой работы на этом этапе не заявляется; для неё требуется отдельная заранее определённая `competence-evidence-spec` и реальные независимые случаи.
