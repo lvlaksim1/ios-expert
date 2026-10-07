@@ -1,0 +1,20 @@
+{
+  "schema": "expert-pp-rm-github-gate-v1",
+  "gate_id": "IOS-EXPERT-PP-RM-GITHUB-001",
+  "phase": "CONCURRENCY_READY",
+  "logical_step_id": "atomic-step-001",
+  "reservation": null,
+  "accepted_attempt": null,
+  "crash_step_id": "crash-step-001",
+  "crash_reservation": null,
+  "crash_accepted_attempt": null,
+  "invariants": {
+    "one_reservation_winner": true,
+    "effect_only_after_reservation": true,
+    "evidence_separate_from_effect": true,
+    "acceptance_separate_from_evidence": true,
+    "unknown_outcome_reconcile_before_retry": true,
+    "no_double_credit": true,
+    "min_seconds_between_sequential_requests": 5
+  }
+}
