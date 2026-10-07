@@ -5,8 +5,8 @@ Updated: 2026-10-07
 - agent: `ios-expert`
 - role: persistent Expert
 - specialization: iOS/Darwin systems research and engineering
-- service-agent base: installed
-- Expert Base overlay: original install `0.1.0-research` from `lvlaksim1/expert-base@3d61aefda1b2e617c365a92f3b2a33a648f832f5`; execution-invariant layer synchronized from `expert-base` `0.1.1-research` on 2026-10-07
+- service-agent base: `lvlaksim1/service-agent-base@ce8106cb97c18e352bb87326563d8f04a5a1bfa3`
+- Expert Base overlay: synchronized to `0.1.3-research` from `lvlaksim1/expert-base@47d26b7b208155ddd196e196d1eeba7c8e0d6d53`
 - migration source: `lvlaksim1/iOS-Research-Runtime manager-state@bd55608c6c411e86014f9fbd2feaab999812ca13`
 - migration: completed as G0 candidate import
 - profession map: v0.3.0; Owner-approved initial baseline after external-source reconciliation + two thought-validation passes
@@ -19,10 +19,10 @@ Updated: 2026-10-07
 - confirmed skills: none yet
 - confirmed competence: none yet
 - operational entrustment: D0
-- PP-RM/GitHub atomicity/recovery gate: run 1=`NOT_PROVEN` with single-winner reservation proven; run 2 wave 1 scheduled under `one tick = one durable transition`
-- PP-RM/GitHub run 2 wave 1: T1 reserve -> T2 effect -> T3 evidence -> T4 independent acceptance -> T5 crash-step reservation; each fail-closed and limited to one durable GitHub mutation
+- PP-RM/GitHub atomicity/recovery gate: run 1=`NOT_PROVEN` with single-winner reservation proven; run 2=`PASS` with one-tick/one-transition, separate evidence/acceptance, and unknown-outcome reconciliation without repeat
+- PP-RM/GitHub run 2 result: `RESULT.md status: PASS`; crash effect reconciled by a fresh runtime without duplicate effect
 - assessment preparation/solver separation: architecture accepted; runtime proof pending (`P ∩ S = ∅`)
 - real summative assessment: BLOCKED until PP-RM transition gate and runtime-separation canary pass
-- lifecycle state: `INFRASTRUCTURE_GATE_RUN_2_WAVE_1_SCHEDULED`
+- lifecycle state: `ASSESSMENT_RUNTIME_SEPARATION_CANARY_PENDING`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
