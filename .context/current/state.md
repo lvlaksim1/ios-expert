@@ -21,8 +21,8 @@ Updated: 2026-10-07
 - operational entrustment: D0
 - PP-RM/GitHub atomicity/recovery gate: run 1=`NOT_PROVEN` with single-winner reservation proven; run 2=`PASS` with one-tick/one-transition, separate evidence/acceptance, and unknown-outcome reconciliation without repeat
 - PP-RM/GitHub run 2 result: `RESULT.md status: PASS`; crash effect reconciled by a fresh runtime without duplicate effect
-- assessment preparation/solver separation: architecture accepted; runtime proof pending (`P ∩ S = ∅`)
-- real summative assessment: BLOCKED until PP-RM transition gate and runtime-separation canary pass
-- lifecycle state: `ASSESSMENT_RUNTIME_SEPARATION_CANARY_PENDING`
+- assessment preparation/solver separation: canary `IOS-EXPERT-RUNTIME-SEPARATION-001` active; requires P1/P2 + S1/S2 fresh runtimes and `P ∩ S = ∅`
+- real summative assessment: BLOCKED until runtime-separation canary `IOS-EXPERT-RUNTIME-SEPARATION-001` reaches durable PASS
+- lifecycle state: `ASSESSMENT_RUNTIME_SEPARATION_CANARY_RUNNING`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
