@@ -1,0 +1,25 @@
+{
+  "schema": "expert-pp-rm-github-gate-v2",
+  "gate_id": "IOS-EXPERT-PP-RM-GITHUB-002",
+  "evidence_basis": [
+    "IOS-EXPERT-PP-RM-GITHUB-001: single-winner SHA-fenced reservation proven"
+  ],
+  "phase": "READY",
+  "normal_step": {
+    "step_id": "run2-normal-001",
+    "reservation": null
+  },
+  "crash_step": {
+    "step_id": "run2-crash-001",
+    "reservation": null
+  },
+  "rules": {
+    "one_tick_one_durable_transition": true,
+    "no_repair_of_prior_tick": true,
+    "fail_closed_on_predecessor_mismatch": true,
+    "evidence_and_acceptance_separate": true,
+    "unknown_outcome_reconcile_before_retry": true,
+    "no_double_credit": true,
+    "min_seconds_between_sequential_external_requests": 5
+  }
+}
