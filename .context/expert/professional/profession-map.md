@@ -1,6 +1,6 @@
 # Карта профессии iOS/Darwin — после мысленной проверки
 
-Статус: `DRAFT_THOUGHT_VALIDATED_PASS1`
+Статус: `DRAFT_OWNER_REVIEW_REQUIRED`
 Версия: `0.3.0`
 Дата: 2026-10-07
 
