@@ -1,3 +1,17 @@
 # Current state
 
-Capture current verified Service Agent state.
+Updated: 2026-10-07
+
+- agent: `ios-expert`
+- role: persistent Expert
+- specialization: iOS/Darwin systems research and engineering
+- service-agent base: installed
+- Expert Base overlay: `0.1.0-research` from `lvlaksim1/expert-base@3d61aefda1b2e617c365a92f3b2a33a648f832f5`
+- migration source: `lvlaksim1/iOS-Research-Runtime manager-state@bd55608c6c411e86014f9fbd2feaab999812ca13`
+- migration: completed as G0 candidate import
+- confirmed skills: none yet
+- confirmed competence: none yet
+- operational entrustment: D0
+- lifecycle state: `READY_FOR_BASELINE_ASSESSMENT`
+
+The source Project Manager remains a separate active/project-local identity and was not replaced or modified by this migration.
