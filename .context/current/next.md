@@ -1,7 +1,9 @@
 # Next
 
-1. Conduct thought-validation of profession-map v0.2 + target-profile candidate using realistic iOS/Darwin cases.
-2. Record contradictions/gaps and revise before Owner approval of the protected initial profile.
-3. Keep all migrated resources G0 until new evidence gates are passed.
-4. Separately prove PP-RM/GitHub atomic-attempt behavior and hidden-assessment access separation before real long-running training or summative assessment.
-5. Do not replace the existing iOS-Research-Runtime Project Manager until a separate Owner lifecycle decision.
+1. Owner reviews/approves or corrects profession-map v0.3.0 + target-profile candidate v0.2 as the protected initial professional scope.
+2. After approval, materialize/retrieve exact `EXPERT-TRAINING-v0.2` specs before executing any training workflow.
+3. Prove `PP-RM/GitHub atomic attempt gate` with a real execution/recovery experiment.
+4. Prove `Hidden assessment access gate` with an actually separate unreadable assessment store/identity.
+5. Only then create the first hidden baseline `assessment-instance` and run the real baseline diagnosis.
+6. Keep all migrated resources G0 and all operational actions D0 until evidence gates explicitly promote them.
+7. Do not replace the existing `iOS-Research-Runtime` Project Manager without a separate Owner lifecycle decision.
