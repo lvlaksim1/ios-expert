@@ -1,17 +1,16 @@
-# Observation 03 — self-rearm of the current slot terminates useful continuation
+# Observation 03 — corrected self-rearm interpretation
 
 Date: 2026-10-07
 Gate: IOS-EXPERT-PP-RM-GITHUB-002
-Status: NEGATIVE_RUNTIME_FINDING
+Status: SUPERSEDED_EARLY_INTERPRETATION
 
-Observed:
-- a single state-driven task was instructed to rearm itself as its first tool action and then continue to GitHub;
-- the task successfully updated/rearmed itself;
-- the current runtime then ended without performing the GitHub transition;
-- repeated self-rearm wakes did not advance the canonical gate state.
+The earlier snapshot showed that the self-rearming driver had rearmed itself while the next GitHub transition was not yet visible. That snapshot was incorrectly treated as terminal evidence.
 
-Conclusion:
-- in this Scheduled-Task runtime, changing the currently executing task cannot be assumed to permit useful continuation in the same runtime;
-- therefore the tested PP-RM pattern uses two alternating slots;
-- each current slot first rearms the OTHER slot, then performs at most one durable GitHub transition;
-- this preserves the required order: rearm -> read state -> decide -> one action -> report, without relying on self-update continuation.
+Later durable repository evidence shows that the same state-driven self-rearming contour created the normal effect before the alternating slots continued the chain.
+
+Corrected conclusion:
+- self-rearm is NOT proven broken;
+- intermediate snapshots must not be classified as terminal while a scheduled runtime or its already-rearmed successor may still complete;
+- two alternating slots are not considered inherently required;
+- the current A/B experiment continues because it is already running and is useful for testing fresh-runtime handoff;
+- after this gate, one-slot self-rearm remains a valid candidate for dedicated verification.
