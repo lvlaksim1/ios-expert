@@ -3,7 +3,7 @@
 No blocker prevents thought experiments, profession-map research or Owner review.
 
 Qualification and implementation gates still open:
-- profession-map v0.2.0 is externally reconciled but not yet approved as protected initial profile;
+- profession-map v0.3.0 has passed two thought-validation passes but still awaits Owner approval as protected initial scope;
 - baseline assessment has not been executed;
 - no migrated skill has been demonstrated by the new Expert;
 - no G0 resource has yet been promoted to G1/G2;
