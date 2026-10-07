@@ -1,0 +1,18 @@
+{
+  "schema": "context-capsule",
+  "version": "2.0.0-dev",
+  "profile": "service-agent",
+  "profile_version": "1.0.0-dev",
+  "source": "lvlaksim1/service-agent-base",
+  "core_commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f",
+  "service_agent_base_commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f",
+  "provenance": {
+    "service_agent_base": {
+      "repository": "lvlaksim1/service-agent-base",
+      "commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f"
+    }
+  },
+  "installed_at": "2026-10-07",
+  "repository": "lvlaksim1/ios-expert",
+  "update_policy": "manual"
+}

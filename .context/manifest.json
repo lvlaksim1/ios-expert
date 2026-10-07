@@ -1,0 +1,55 @@
+{
+  "schema": "context-capsule-service-agent-manifest",
+  "schema_version": 1,
+  "profile": "service-agent",
+  "profile_version": "1.0.0-dev",
+  "repository": "lvlaksim1/ios-expert",
+  "agent_state_branch": "main",
+  "entrypoint": ".context/ENTRYPOINT.md",
+  "capsule_metadata": ".context/capsule.json",
+  "latest_handoff": ".context/handoffs/latest.md",
+  "agent": {
+    "contract": ".context/service-agent/CONTRACT.md",
+    "protocol": ".context/service-agent/PROTOCOL.md",
+    "identity": ".context/service-agent/identity.json",
+    "mandate": ".context/service-agent/mandate.md",
+    "capabilities": ".context/service-agent/capabilities.md",
+    "limitations": ".context/service-agent/limitations.md",
+    "principal_model": ".context/service-agent/principal-model.md",
+    "invocation_contract": ".context/service-agent/invocation-contract.md",
+    "result_contract": ".context/service-agent/result-contract.md",
+    "beliefs": ".context/service-agent/beliefs.md",
+    "goals": ".context/service-agent/goals.md",
+    "intentions": ".context/service-agent/intentions.md",
+    "plans": ".context/service-agent/plans.md",
+    "engagements": ".context/service-agent/engagements.md"
+  },
+  "current": {
+    "state": ".context/current/state.md",
+    "blockers": ".context/current/blockers.md",
+    "next": ".context/current/next.md"
+  },
+  "memory": {
+    "index": ".context/memory/index.md",
+    "semantic": ".context/memory/semantic.md",
+    "procedural": ".context/memory/procedural.md",
+    "episodes": []
+  },
+  "profile_state": {
+    "mandatory": [],
+    "optional": []
+  },
+  "runtime": {
+    "checkpoint_is_capsule_state": false
+  },
+  "sync_policy": {
+    "semantic_only": true,
+    "professional_memory_only": true,
+    "target_context_isolated": true,
+    "target_authority_requires_explicit_grant": true,
+    "service_output_advisory_by_default": true,
+    "authority_transport_non_escalating": true,
+    "self_authority_expansion_forbidden": true
+  },
+  "updated_at": "2026-10-07"
+}
