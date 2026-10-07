@@ -17,9 +17,10 @@ Updated: 2026-10-07
 - confirmed skills: none yet
 - confirmed competence: none yet
 - operational entrustment: D0
-- PP-RM/GitHub atomicity/recovery gate: `NOT_PROVEN_AFTER_RUN_1`; one SHA-fenced reservation winner was proven, but the scheduled winner did not continue to durable effect/evidence, so no acceptance or crash-recovery phase was reached
+- PP-RM/GitHub atomicity/recovery gate: run 1=`NOT_PROVEN` with single-winner reservation proven; run 2 wave 1 scheduled under `one tick = one durable transition`
+- PP-RM/GitHub run 2 wave 1: T1 reserve -> T2 effect -> T3 evidence -> T4 independent acceptance -> T5 crash-step reservation; each fail-closed and limited to one durable GitHub mutation
 - assessment preparation/solver separation: architecture accepted; runtime proof pending (`P ∩ S = ∅`)
 - real summative assessment: BLOCKED until PP-RM transition gate and runtime-separation canary pass
-- lifecycle state: `INFRASTRUCTURE_GATE_RUN_2_PREPARATION`
+- lifecycle state: `INFRASTRUCTURE_GATE_RUN_2_WAVE_1_SCHEDULED`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
