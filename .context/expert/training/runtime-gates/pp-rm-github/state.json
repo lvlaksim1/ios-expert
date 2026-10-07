@@ -1,9 +1,13 @@
 {
   "schema": "expert-pp-rm-github-gate-v1",
   "gate_id": "IOS-EXPERT-PP-RM-GITHUB-001",
-  "phase": "CONCURRENCY_READY",
+  "phase": "CONCURRENCY_IN_PROGRESS",
   "logical_step_id": "atomic-step-001",
-  "reservation": null,
+  "reservation": {
+    "attempt_id": "atomic-step-001-B",
+    "actor": "B",
+    "logical_step_id": "atomic-step-001"
+  },
   "accepted_attempt": null,
   "crash_step_id": "crash-step-001",
   "crash_reservation": null,
