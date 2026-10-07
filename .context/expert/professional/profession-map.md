@@ -4,7 +4,7 @@
 Версия: `0.3.0`
 Дата: 2026-10-07
 
-Карта основана на Apple Platform Security, Apple Developer/IOKit, Apple OSS XNU/dyld/launchd, воспроизводимых наблюдениях и профессиональной практике iOS kernel/reverse-engineering. Она ещё не утверждена Владельцем и не создаёт допусков.
+Карта основана на Apple Platform Security, Apple Developer/IOKit, Apple OSS XNU/dyld/launchd, воспроизводимых наблюдениях и профессиональной практике iOS kernel/reverse-engineering. Утверждена Владельцем 2026-10-07 как начальная защищённая карта профессии. Утверждение карты не создаёт навыков, компетентности или операционных допусков.
 
 ## A. Secure boot, firmware, recovery и restore
 - A1: восстановить цепочку Boot ROM -> bootloader/iBoot -> kernel и точки проверки доверия для конкретной модели/версии.
