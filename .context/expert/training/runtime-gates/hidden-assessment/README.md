@@ -1,37 +1,45 @@
-# Hidden-assessment access-separation gate
+# Runtime-separated assessment preparation gate
 
-Gate: `IOS-EXPERT-HIDDEN-ASSESSMENT-001`
-Status: `BLOCKED_CAPABILITY`
+Gate: `IOS-EXPERT-ASSESSMENT-RUNTIME-SEPARATION-001`
+Status: `ARCHITECTURE_ACCEPTED_PENDING_RUNTIME_TEST`
 Date: 2026-10-07
 
 ## Requirement
-Concrete held-out assessment tasks must be technically unreadable by the training identity (`ios-expert` / PP-RM), including through current files, branches, Git history, API reads, inherited repository access or workflow-edit paths.
+For each concrete assessment instance, no runtime that participated in preparing that instance may participate in solving it.
 
-## Observed current contour
-The connected GitHub identity used in this ChatGPT/Scheduled-Task contour has read/write/admin-class repository capability for `lvlaksim1/ios-expert`. Scheduled training tasks use the same connected GitHub integration.
+Preparation and solving may each span multiple ticks/runtimes.
 
-Therefore the following are NOT sufficient isolation:
-- another path in ios-expert;
-- another branch in ios-expert;
-- deleted files preserved in Git history;
-- a second repository readable by the same training connection;
-- plaintext/generated hidden tasks committed before the attempt;
-- same-repository Actions secret if the training identity can alter the workflow or otherwise cause secret exfiltration.
+Let:
+- P = set of runtime identities/ticks that prepared, refined, froze or otherwise saw the concrete task before solver release;
+- S = set of runtime identities/ticks that solve the task or continue the solver chain.
 
-## Acceptable future contours
-Preferred:
-1. separate evaluator GitHub App/connection/identity;
-2. private assessment repository readable by evaluator but not by the training identity;
-3. evaluator publishes only assessment-spec metadata, task instance ID, result and permitted evidence back to ios-expert.
+Required invariant:
 
-Alternative only if independently proven:
-- protected GitHub Actions evaluation environment with hidden task material in secrets/secure storage, immutable evaluator workflow from the training identity, approval/protection that the training identity cannot bypass, and no API/history path exposing the task.
+`P ∩ S = ∅`
 
-## Pass test
-Create a non-sensitive canary task in the assessment contour.
-The evaluator must prove it can read/use the canary.
-The training identity must attempt all permitted read paths and receive access denial/not-found without learning the canary.
-Only then may real held-out tasks be generated there.
+For current PP-RM semantics, one tick is one fresh execution runtime.
 
-## Current decision
-Do not create real hidden assessment tasks yet. The gate remains BLOCKED_CAPABILITY until an actually separate evaluator identity/access boundary exists.
+## Meaning
+This is a runtime-independence requirement, not a claim of absolute repository secrecy. It prevents the same runtime from both constructing a task around its own context and then receiving credit for solving that task.
+
+The concrete task may be prepared over P1 -> P2 -> ... -> Pn and solved over S1 -> S2 -> ... -> Sm, provided no runtime identity occurs in both sets.
+
+## Additional rules
+- the assessment specification and criteria may be known before the attempt;
+- the concrete assessment instance is frozen before the first solver runtime;
+- after freeze, preparer runtimes cannot join the solver chain;
+- solver runtimes cannot retroactively become preparers for the same instance;
+- evaluation may be performed by a third disjoint runtime chain E;
+- all runtime identities participating in P, S and E are durably recorded with the assessment instance;
+- a runtime identity collision invalidates the affected assessment instance;
+- project-manager historical cases may inspire preparation, but the concrete task must require new work rather than verbatim replay.
+
+## Stronger isolation
+A separate technical access boundary may still be required later for high-risk certification or where leakage through shared storage would materially invalidate the assessment. It is not a prerequisite for the initial baseline diagnosis under this Owner-approved runtime-separation model.
+
+## Next proof
+Run a canary assessment lifecycle with:
+1. at least two preparation ticks;
+2. at least two solver ticks;
+3. durable runtime/tick IDs;
+4. automatic set-intersection verification.
