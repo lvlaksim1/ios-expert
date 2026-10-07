@@ -1,9 +1,10 @@
 # Next
 
-1. Redesign the PP-RM/GitHub gate so one Scheduled-Task wake performs one durable transition only: reserve -> separate effect wake -> separate evidence wake -> separate acceptance wake -> separate recovery/verification wakes.
-2. Re-run the gate with the same fail-closed criteria: single reservation winner, exactly one logical effect, separate evidence/acceptance, injected unknown outcome, recovery without repeating effect, no double credit, >=5 seconds between sequential requests.
-3. Establish a technically separate evaluator identity/access boundary for hidden assessments. Same GitHub identity, another branch/path/repository or readable Git history do not count.
-4. Run a non-sensitive canary denial test: evaluator can read canary; training identity cannot read it through any permitted path.
-5. Only after both infrastructure gates pass, create the first hidden baseline assessment instance.
-6. Run baseline diagnosis against Owner-approved profession-map v0.3.0 / target-profile v0.2.
-7. Build the first learning program from the observed gap map.
+1. Run PP-RM/GitHub gate run 2 using one durable transition per tick.
+2. Preserve run 1 unchanged as negative evidence.
+3. Required transition chain for run 2: reserve -> effect -> evidence -> acceptance -> injected-unconfirmed effect -> reconcile -> final verify.
+4. Every transition must fail closed if the canonical predecessor state is not exactly what it expects; no task repairs a previous task.
+5. Enforce >=5 seconds between sequential external requests inside a tick.
+6. After PP-RM gate passes, run the assessment runtime-separation canary with multi-tick preparation and multi-tick solving and verify `P ∩ S = ∅`.
+7. Only after both gates pass, run baseline diagnosis against Owner-approved profession-map v0.3.0 / target-profile v0.2.
+8. Build the first learning program from the observed gap map.
