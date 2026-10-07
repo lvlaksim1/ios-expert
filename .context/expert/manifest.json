@@ -1,0 +1,21 @@
+{
+  "schema": "expert-overlay-manifest-v1",
+  "expert_id": "ios-expert",
+  "specialization": "iOS and Darwin systems research and engineering",
+  "expert_base_version": "0.1.0-research",
+  "entrypoint": ".context/expert/ENTRYPOINT.md",
+  "constitution": ".context/expert/CONSTITUTION.md",
+  "profile": ".context/expert/PROFILE.md",
+  "resource_governance": ".context/expert/RESOURCE_GOVERNANCE.md",
+  "training_lock": ".context/expert/training/TRAINING_BASELINE.lock.json",
+  "profession_map": ".context/expert/professional/profession-map.md",
+  "target_professional_profile": ".context/expert/professional/target-professional-profile.md",
+  "qualification_state": ".context/expert/professional/qualification-state.md",
+  "migration_record": ".context/expert/migration/IOS_PM_MIGRATION.md",
+  "runtime": {
+    "long_running_mechanism": "PP-RM",
+    "durable_state": "GitHub",
+    "nd_rm": "excluded",
+    "library": "excluded"
+  }
+}

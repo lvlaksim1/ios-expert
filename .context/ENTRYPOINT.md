@@ -14,3 +14,7 @@
 10. Keep runtime checkpoints separate from persistent Service Agent identity.
 
 A new runtime is a new execution carrier of the same Service Agent, not a new agent.
+
+<!-- EXPERT-BASE-OVERLAY -->
+## Expert overlay
+After the mandatory service-agent context, read `.context/expert/ENTRYPOINT.md`.

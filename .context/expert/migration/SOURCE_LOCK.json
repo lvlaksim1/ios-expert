@@ -1,0 +1,20 @@
+{
+  "migration_id": "IOS-PM-TO-EXPERT-2026-10-07-001",
+  "source": {
+    "repository": "lvlaksim1/iOS-Research-Runtime",
+    "branch": "manager-state",
+    "commit": "bd55608c6c411e86014f9fbd2feaab999812ca13",
+    "tree": "018706077d866c161aee298d73eb75e0024c8721"
+  },
+  "reviewed_sources": {
+    ".context/memory/semantic.md": "7cd9ad7121f51a01ad248bf3af6200b250f19bf0",
+    ".context/memory/procedural.md": "3cc7be7fee6d97462811bf2cf9c3cf2bdc92be9a",
+    ".context/manager/beliefs.md": "05508e6e87ec131d9b07a1f13f89105226f16d2a",
+    ".context/current/state.md": "9169de7603739518d6d00c67cc654e665b86e088",
+    ".context/current/blockers.md": "91f2793dbb2361a78bea15734cb2b206f4e2bacd",
+    ".context/current/next.md": "f69cef451ac2db591bf0a50d1ef64fd8e791bdef",
+    ".context/dialogues/2026-09-24-apfs-error79-reconciliation.md": "09555cbb10bb2bdaea3ba9f524b6c72ccf92d4a8",
+    "docs/agent-migration-baseline.md": "6c51341ee9ae8dd0369a4cead82e8baded942f16"
+  },
+  "status_policy": "all imported professional resources start at G0 until the new Expert passes required evidence and authority gates"
+}

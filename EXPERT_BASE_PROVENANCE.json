@@ -1,0 +1,10 @@
+{
+  "expert_base_repository": "lvlaksim1/expert-base",
+  "expert_base_commit": "3d61aefda1b2e617c365a92f3b2a33a648f832f5",
+  "expert_base_version": "0.1.0-research",
+  "service_agent_base_repository": "lvlaksim1/service-agent-base",
+  "service_agent_base_commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f",
+  "migration_source_repository": "lvlaksim1/iOS-Research-Runtime",
+  "migration_source_branch": "manager-state",
+  "migration_source_commit": "bd55608c6c411e86014f9fbd2feaab999812ca13"
+}
