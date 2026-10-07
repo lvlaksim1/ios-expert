@@ -4,7 +4,7 @@
   "evidence_basis": [
     "IOS-EXPERT-PP-RM-GITHUB-001: single-winner SHA-fenced reservation proven"
   ],
-  "phase": "CRASH_RESERVED",
+  "phase": "GATE_PASS_CANDIDATE",
   "normal_step": {
     "step_id": "run2-normal-001",
     "reservation": {
@@ -19,7 +19,9 @@
       "attempt_id": "run2-crash-001-attempt-1",
       "tick_id": "SLOT_B_CRASH_RESERVE",
       "actor": "CRASH_RESERVER"
-    }
+    },
+    "accepted_attempt": "run2-crash-001-attempt-1",
+    "accept_tick_id": "SLOT_B_GATE_CANDIDATE_20261007T183615+0300"
   },
   "rules": {
     "one_tick_one_durable_transition": true,
