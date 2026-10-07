@@ -1,0 +1,30 @@
+{
+  "schema": "ios-expert-runtime-separation-canary-v1",
+  "gate_id": "IOS-EXPERT-RUNTIME-SEPARATION-001",
+  "phase": "P1_READY",
+  "qualification_effect": "NONE",
+  "rules": {
+    "one_wake_one_fresh_runtime": true,
+    "one_durable_mutation_per_wake": true,
+    "rearm_first": true,
+    "min_seconds_between_sequential_requests": 5,
+    "exact_preparation_runtime_count": 2,
+    "exact_solver_runtime_count": 2,
+    "runtime_id_must_be_unique": true,
+    "require_P_intersection_S_empty": true,
+    "concrete_task_frozen_before_solver": true
+  },
+  "P": [],
+  "S": [],
+  "E": [],
+  "preparation": {
+    "seed": null,
+    "task": null,
+    "frozen": false,
+    "frozen_by_runtime": null
+  },
+  "solution": {
+    "s1_observation": null,
+    "final_answer": null
+  }
+}
