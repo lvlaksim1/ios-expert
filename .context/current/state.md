@@ -18,8 +18,8 @@ Updated: 2026-10-07
 - confirmed competence: none yet
 - operational entrustment: D0
 - PP-RM/GitHub atomicity/recovery gate: `NOT_PROVEN_AFTER_RUN_1`; one SHA-fenced reservation winner was proven, but the scheduled winner did not continue to durable effect/evidence, so no acceptance or crash-recovery phase was reached
-- hidden-assessment access-separation gate: BLOCKED_CAPABILITY
-- real summative assessment: BLOCKED until both gates pass
-- lifecycle state: `INFRASTRUCTURE_GATE_REDESIGN_REQUIRED`
+- assessment preparation/solver separation: architecture accepted; runtime proof pending (`P ∩ S = ∅`)
+- real summative assessment: BLOCKED until PP-RM transition gate and runtime-separation canary pass
+- lifecycle state: `INFRASTRUCTURE_GATE_RUN_2_PREPARATION`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
