@@ -13,12 +13,13 @@ Updated: 2026-10-07
 - target professional profile: v0.2; Owner-approved initial baseline
 - action cards: candidate v0.1 created for mandatory baseline actions
 - public baseline assessment spec: v0.2 design complete; hidden assessment-instance not created
+- training baseline materialized: all 8 locked `EXPERT-TRAINING-v0.2` files present with expected blob SHAs
 - confirmed skills: none yet
 - confirmed competence: none yet
 - operational entrustment: D0
-- PP-RM/GitHub atomicity/recovery gate: RUNNING; first contention run proves one reservation winner but post-reservation effect/evidence continuation is NOT_PROVEN
+- PP-RM/GitHub atomicity/recovery gate: `NOT_PROVEN_AFTER_RUN_1`; one SHA-fenced reservation winner was proven, but the scheduled winner did not continue to durable effect/evidence, so no acceptance or crash-recovery phase was reached
 - hidden-assessment access-separation gate: BLOCKED_CAPABILITY
 - real summative assessment: BLOCKED until both gates pass
-- lifecycle state: `READY_FOR_INFRASTRUCTURE_GATE_TESTS`
+- lifecycle state: `INFRASTRUCTURE_GATE_REDESIGN_REQUIRED`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
