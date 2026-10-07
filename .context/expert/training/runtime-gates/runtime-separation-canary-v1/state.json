@@ -1,7 +1,7 @@
 {
   "schema": "ios-expert-runtime-separation-canary-v1",
   "gate_id": "IOS-EXPERT-RUNTIME-SEPARATION-001",
-  "phase": "P2_READY",
+  "phase": "S1_READY",
   "qualification_effect": "NONE",
   "rules": {
     "one_wake_one_fresh_runtime": true,
@@ -14,22 +14,40 @@
     "require_P_intersection_S_empty": true,
     "concrete_task_frozen_before_solver": true
   },
-  "P": ["IOSRS-P1-20261008T011505-a73c91e4"],
+  "P": [
+    "IOSRS-P1-20261008T011505-a73c91e4",
+    "IOSRS-P2-20261008T012456-6f4a92c1"
+  ],
   "S": [],
   "E": [],
   "preparation": {
-    "seed": ["D","A","C","B"],
-    "task": null,
-    "frozen": false,
-    "frozen_by_runtime": null
+    "seed": [
+      "D",
+      "A",
+      "C",
+      "B"
+    ],
+    "task": {
+      "task_id": "canary-sort-001",
+      "instruction": "Sort the tokens in ascending ASCII order and join them with '-'",
+      "tokens": [
+        "D",
+        "A",
+        "C",
+        "B"
+      ],
+      "fingerprint": "canary-sort-001|D,A,C,B|ASCII_ASC|DASH"
+    },
+    "frozen": true,
+    "frozen_by_runtime": "IOSRS-P2-20261008T012456-6f4a92c1"
   },
   "solution": {
     "s1_observation": null,
     "final_answer": null
   },
   "last_transition": {
-    "role": "P1",
-    "runtime_id": "IOSRS-P1-20261008T011505-a73c91e4",
-    "classification": "PREPARATION_SEED_CREATED"
+    "role": "P2",
+    "runtime_id": "IOSRS-P2-20261008T012456-6f4a92c1",
+    "classification": "ASSESSMENT_INSTANCE_FROZEN"
   }
 }
