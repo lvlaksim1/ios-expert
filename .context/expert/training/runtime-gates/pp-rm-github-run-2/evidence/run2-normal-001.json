@@ -1,0 +1,7 @@
+{
+  "step_id": "run2-normal-001",
+  "attempt_id": "run2-normal-001-attempt-1",
+  "effect_path": ".context/expert/training/runtime-gates/pp-rm-github-run-2/effects/run2-normal-001.md",
+  "classification": "EFFECT_OBSERVED_NOT_YET_ACCEPTED",
+  "runtime_role": "SLOT_A_NORMAL_EVIDENCE"
+}
