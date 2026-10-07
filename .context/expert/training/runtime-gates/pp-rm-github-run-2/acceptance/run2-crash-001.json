@@ -1,0 +1,8 @@
+{
+  "step_id": "run2-crash-001",
+  "attempt_id": "run2-crash-001-attempt-1",
+  "evidence_path": "evidence/run2-crash-001-recovery.json",
+  "classification": "RECOVERED_EXISTING_EFFECT_ACCEPTED",
+  "tick_id": "SLOT_B_CRASH_ACCEPT_20261007T182040+0300",
+  "runtime_role": "SLOT_B_CRASH_ACCEPTOR"
+}
