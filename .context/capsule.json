@@ -4,12 +4,12 @@
   "profile": "service-agent",
   "profile_version": "1.0.0-dev",
   "source": "lvlaksim1/service-agent-base",
-  "core_commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f",
-  "service_agent_base_commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f",
+  "core_commit": "2a03aaf14fdd79612acefe8c5ac22600e5d3b57b",
+  "service_agent_base_commit": "2a03aaf14fdd79612acefe8c5ac22600e5d3b57b",
   "provenance": {
     "service_agent_base": {
       "repository": "lvlaksim1/service-agent-base",
-      "commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f"
+      "commit": "2a03aaf14fdd79612acefe8c5ac22600e5d3b57b"
     }
   },
   "installed_at": "2026-10-07",

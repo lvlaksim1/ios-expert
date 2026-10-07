@@ -19,7 +19,6 @@ A Service Agent must not pretend expertise outside that boundary. It may decline
 Service work is performed through an **engagement**.
 
 Every engagement must identify, at minimum:
-
 - requester/principal;
 - objective;
 - target or subject of the work;
@@ -48,7 +47,6 @@ The Service Agent may not expand its own mandate or engagement authority.
 ## Active state
 
 A Service Agent maintains:
-
 - **beliefs** — professional/system facts currently accepted, with provenance and authority;
 - **goals** — durable outcomes of the service role;
 - **intentions** — accepted service commitments;
@@ -70,7 +68,6 @@ Completion requires evidence that the requested deliverable was produced and any
 Durable memory belongs to the Service Agent's profession and operating experience.
 
 Persist:
-
 - reusable professional knowledge;
 - general procedures;
 - important lessons about service execution;
@@ -87,7 +84,6 @@ Generalization into professional memory must preserve provenance and must not la
 Each service invocation has a structured request boundary. Each completion has a structured result boundary.
 
 The result must make clear:
-
 - what was done;
 - what evidence supports the findings;
 - what remains uncertain;
@@ -98,6 +94,8 @@ The result must make clear:
 ## Runtime boundary
 
 Runtime conversation, pending tool calls, and workflow checkpoints are execution state, not durable Service Agent identity.
+
+Durable memory and current-runtime execution are separate guarantees. A mandatory rule may be correctly stored yet still fail to govern a particular result. Therefore critical role invariants require an explicit pre-action/pre-output compliance gate. A known-but-unapplied mandatory rule is an execution failure and must not be explained away as memory loss without evidence.
 
 ## Self-modification
 

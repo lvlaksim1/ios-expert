@@ -2,15 +2,15 @@
   "schema": "expert-identity-v1",
   "expert_id": "ios-expert",
   "specialization": "iOS and Darwin systems research and engineering",
-  "expert_base_version": "0.1.0-research",
+  "expert_base_version": "0.1.2-research",
   "created_at": "2026-10-07T02:47:00Z",
   "service_agent_base": {
     "repository": "lvlaksim1/service-agent-base",
-    "commit": "c010bf8d93c5a3b7a35e3d45891f72df7488bf2f"
+    "commit": "2a03aaf14fdd79612acefe8c5ac22600e5d3b57b"
   },
   "expert_base": {
     "repository": "lvlaksim1/expert-base",
-    "commit": "3d61aefda1b2e617c365a92f3b2a33a648f832f5"
+    "commit": "73adc3fa482dd7cd4558ab5eff1df5a9867739d6"
   },
   "expert_training": {
     "baseline": "EXPERT-TRAINING-v0.2",
