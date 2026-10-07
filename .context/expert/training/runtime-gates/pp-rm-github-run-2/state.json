@@ -4,10 +4,14 @@
   "evidence_basis": [
     "IOS-EXPERT-PP-RM-GITHUB-001: single-winner SHA-fenced reservation proven"
   ],
-  "phase": "READY",
+  "phase": "NORMAL_RESERVED",
   "normal_step": {
     "step_id": "run2-normal-001",
-    "reservation": null
+    "reservation": {
+      "attempt_id": "run2-normal-001-attempt-1",
+      "tick_id": "RUN2-T1",
+      "actor": "RESERVER"
+    }
   },
   "crash_step": {
     "step_id": "run2-crash-001",
