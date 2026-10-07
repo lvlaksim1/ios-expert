@@ -1,0 +1,8 @@
+{
+  "step_id": "run2-crash-001",
+  "attempt_id": "run2-crash-001-attempt-1",
+  "effect_path": "effects/run2-crash-001.md",
+  "classification": "RECONCILED_EXISTING_EFFECT_NO_REPEAT",
+  "tick_id": "SLOT_B_CRASH_RECOVERY_20261007T174948+0300",
+  "runtime_role": "SLOT_B_CRASH_RECOVERY"
+}
