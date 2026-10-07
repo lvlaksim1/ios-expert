@@ -1,7 +1,7 @@
 {
   "schema": "ios-expert-runtime-separation-canary-v1",
   "gate_id": "IOS-EXPERT-RUNTIME-SEPARATION-001",
-  "phase": "S1_READY",
+  "phase": "S2_READY",
   "qualification_effect": "NONE",
   "rules": {
     "one_wake_one_fresh_runtime": true,
@@ -18,7 +18,9 @@
     "IOSRS-P1-20261008T011505-a73c91e4",
     "IOSRS-P2-20261008T012456-6f4a92c1"
   ],
-  "S": [],
+  "S": [
+    "IOSRS-S1-20261008T013436-4b9d71e2"
+  ],
   "E": [],
   "preparation": {
     "seed": [
@@ -42,12 +44,17 @@
     "frozen_by_runtime": "IOSRS-P2-20261008T012456-6f4a92c1"
   },
   "solution": {
-    "s1_observation": null,
+    "s1_observation": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
     "final_answer": null
   },
   "last_transition": {
-    "role": "P2",
-    "runtime_id": "IOSRS-P2-20261008T012456-6f4a92c1",
-    "classification": "ASSESSMENT_INSTANCE_FROZEN"
+    "role": "S1",
+    "runtime_id": "IOSRS-S1-20261008T013436-4b9d71e2",
+    "classification": "SOLVER_STAGE_1"
   }
 }
