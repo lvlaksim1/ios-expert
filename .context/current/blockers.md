@@ -13,3 +13,9 @@ Qualification and implementation gates still open:
 - the exact training specification snapshot remains locked by source blob SHA and has not yet been materialized into `training/specs/` in this repository.
 
 Until the two implementation gates are proven, real long-running training and summative assessment remain BLOCKED. These are expected gates, not reasons to weaken the criteria.
+
+## Hidden assessment access separation
+- status: `BLOCKED_CAPABILITY`;
+- current Scheduled-Task training and evaluator would share the same connected GitHub identity;
+- same-identity paths/branches/repos do not establish blindness;
+- require a separate evaluator identity/access boundary and a canary denial test before real summative assessment.
