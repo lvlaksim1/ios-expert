@@ -1,9 +1,8 @@
 # Next
 
-1. Owner reviews/approves or corrects profession-map v0.3.0 + target-profile candidate v0.2 as the protected initial professional scope.
-2. After approval, materialize/retrieve exact `EXPERT-TRAINING-v0.2` specs before executing any training workflow.
-3. Prove `PP-RM/GitHub atomic attempt gate` with a real execution/recovery experiment.
-4. Prove `Hidden assessment access gate` with an actually separate unreadable assessment store/identity.
-5. Only then create the first hidden baseline `assessment-instance` and run the real baseline diagnosis.
-6. Keep all migrated resources G0 and all operational actions D0 until evidence gates explicitly promote them.
-7. Do not replace the existing `iOS-Research-Runtime` Project Manager without a separate Owner lifecycle decision.
+1. Prove the PP-RM/GitHub execution gate: atomic reservation before effects, unique attempt identity, evidence/acceptance separation, recovery from an unknown outcome, and no double credit.
+2. Prove the hidden-assessment access-separation gate: the training identity must be unable to read concrete held-out tasks through current GitHub state, history, API or inherited repository access.
+3. Materialize/read the exact locked `EXPERT-TRAINING-v0.2` objects by SHA before any training execution.
+4. After both infrastructure gates pass, create the first baseline assessment instance outside the readable training contour.
+5. Run baseline diagnosis against the Owner-approved profession-map v0.3.0 / target-profile v0.2.
+6. Build the first learning program from the observed gap map; do not prioritize topics merely because they dominated the source Project Manager history.
