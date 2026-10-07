@@ -16,7 +16,9 @@ Updated: 2026-10-07
 - confirmed skills: none yet
 - confirmed competence: none yet
 - operational entrustment: D0
-- real long-running training/summative assessment: BLOCKED on two implementation gates
+- PP-RM/GitHub atomicity/recovery gate: RUNNING
+- hidden-assessment access-separation gate: BLOCKED_CAPABILITY
+- real summative assessment: BLOCKED until both gates pass
 - lifecycle state: `READY_FOR_INFRASTRUCTURE_GATE_TESTS`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
