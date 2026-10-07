@@ -1,0 +1,7 @@
+{
+  "step_id": "run2-normal-001",
+  "attempt_id": "run2-normal-001-attempt-1",
+  "evidence_path": ".context/expert/training/runtime-gates/pp-rm-github-run-2/evidence/run2-normal-001.json",
+  "classification": "ACCEPTED_BY_SEPARATE_RUNTIME",
+  "runtime_role": "SLOT_A_NORMAL_ACCEPTANCE"
+}
