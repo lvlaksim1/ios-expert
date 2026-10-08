@@ -15,16 +15,52 @@
     "IOSBASE-S-BASE-03-20261008T034556-a7e4c2b9",
     "IOSBASE-S-BASE-04-20261008T041319-c39e7a12"
   ],
-  "evaluator_runtime_ids": [],
-  "phase": "EVAL_READY",
+  "evaluator_runtime_ids": [
+    "IOSBASE-E-BASE-01-20261008T043614-5d8c1a70"
+  ],
+  "phase": "EVAL_BASE_02",
   "cases": {
     "BASE-01": {
       "path": ".context/expert/training/baseline-assessment-v1/instances/case-01-secureboot-xnu-artifacts.md",
-      "status": "SOLVED",
+      "status": "EVALUATED",
       "solver_runtime_id": "IOSBASE-S-BASE-01-20261008T031017-9e41c2af",
       "response": "FACTS\n- Среда: синтетический набор свидетельств для ARM64 iPhone-класса, сборка 23A-SYNTH-01; это не журнал реального устройства.\n- В режиме восстановления IMG4-образ оперативной системы восстановления принят, запущен и достигнута пользовательская среда восстановления. Завершение восстановления или персонализации этим не подтверждено.\n- При обычной загрузке исполнился Boot ROM; iBoot выполнил аутентификацию образа ядра и передал ему управление. XNU вывел строку версии, завершилась ранняя инициализация Mach. Затем зарегистрирована паника «root device unavailable after storage wait».\n- Манифест IPSW содержит компоненты восстановления и обычной загрузки с привязкой к модели; в коллекции ядра присутствует код ожидаемого семейства драйверов накопителя.\n- В наборе нет IORegistry, сведений о созданных блочных устройствах и подтверждения отказа сервера восстановления/персонализации.\n\nHYPOTHESES\n- Возможен разрыв пути обнаружения накопителя: отсутствующий/неработающий аппаратный поставщик, несовпадение свойств для сопоставления драйвера, ошибка probe/start, отсутствие опубликованного блочного устройства.\n- Возможны проблемы последующего разрешения корневого тома, включая разметку/метаданные/подключение файловой системы. Ни один из этих механизмов пока не установлен как причина.\n- Не исключены отличия аппаратной конфигурации или программных компонентов от ожидаемых для указанной сборки.\n\nUNKNOWNS\n- Был ли опубликован контроллер в дереве служб IOKit, сопоставился ли драйвер, успешно ли завершились probe/start; появился ли носитель и BSD-узел диска.\n- Доступен ли нужный контейнер/том, как выбирался корневой том, какие сообщения непосредственно предшествовали панике.\n- Точные версия и соответствие открытых исходников XNU конкретному закрытому выпуску; исправность аппаратного накопителя и низкоуровневой прошивки.\n- Завершились ли восстановление и персонализация; нет данных об отказе сервера и нельзя утверждать ни отказ, ни полный успех.\n\nFIRST_PROVEN_FAILURE\nПервый доказанный сбой в наблюдаемой последовательности обычной загрузки — невозможность получить корневое устройство после ожидания накопителя, завершившаяся паникой ядра. Это место обнаружения сбоя, а не доказательство, что первопричина находится именно в драйвере, APFS или аппаратуре. Аутентификация образа ядра и начало его исполнения состоялись; полная успешная безопасная загрузка и работа пользовательской системы не состоялись.\n\nREASONING\n- Boot ROM → iBoot → аутентифицированный образ ядра → выполняющийся XNU: журнал подтверждает достижение ядра в данной попытке. Он не доказывает корректность всех последующих этапов загрузки, всех компонентов цепочки доверия и прикладной среды.\n- Загрузка среды восстановления — отдельная ветвь от обычной загрузки. Принятие IMG4 и запуск восстановительной среды не равнозначны успешному завершению восстановления, проверке персонализации или возможности смонтировать обычный системный корень.\n- IPSW — комплект компонентов и манифестов, IMG4 — формат упакованного/аутентифицируемого загрузочного объекта, коллекция ядра — набор исполняемых компонентов ядра и драйверов. Наличие драйверного кода в коллекции не подтверждает, что конкретное устройство обнаружено, что опубликован поставщик IOKit, что свойства сопоставились, что probe/start прошли, что появился блочный интерфейс или что корневой том доступен.\n- Открытые части XNU (osfmk, bsd и относящийся к IOKit код) позволяют построить проверяемую схему перехода от инициализации ядра к службам устройств, блочному вводу-выводу и попытке найти корень. Конкретные ветви кода, сообщения и внутренние свойства закрытой сборки нельзя объявлять идентичными общедоступному дереву исходников без привязки по версии и дополнительного подтверждения.\n- Следует различать место наблюдаемой паники, более ранний неуспех перечисления/запуска устройств и альтернативный сбой разрешения тома. Имеющихся свидетельств недостаточно, чтобы выбрать одну первопричину.\n\nNEXT_READ_ONLY_EVIDENCE\n1. Зафиксировать идентификатор модели, точную сборку, состав и контрольные суммы соответствующих компонентов IPSW/IMG4/коллекции ядра; сопоставить с наблюдаемым журналом без модификации образов.\n2. Получить полную временную последовательность сообщений ядра от раннего обнаружения шины/накопителя до ожидания root device и паники; отдельно выделить IOKit matching, probe/start, ошибки контроллера, блокового слоя и выбора корня.\n3. Если доступен диагностический снимок, сопоставить плоскости IODeviceTree и IOService в IORegistry: наличие аппаратного узла, цепь поставщиков, опубликованные службы накопителя, свойства сопоставления и состояние драйвера.\n4. Проверить только чтением факт публикации носителя/разделов и узлов /dev/disk*, а затем сведения о контейнере и выборе корневого тома. Если блочный интерфейс отсутствует, не объявлять APFS первопричиной; если присутствует, изучать путь выбора и подключения корня.\n5. Лишь после локализации расхождения проектировать следующий воспроизводимый тест; не менять настройки загрузки, коллекцию драйверов, разметку или семантику записи на основании одной паники.\n\nTRANSFER_BOUNDARIES\n- Для иной сборки iOS, модели, SoC, типа накопителя и комплекта прошивок эти выводы не доказывают тождество механизма сбоя. Требуются отдельные журналы и проверка совместимости артефактов.\n- Нельзя без отдельной проверки переносить результат из синтетического набора или виртуальной среды на физический аппарат и наоборот.\n- Открытый XNU служит архитектурной опорой, но не является безусловным подтверждением точной реализации закрытого iOS-выпуска.\n\nEXECUTION_COMPLIANCE\nRULE_KNOWN: различать наблюдение/гипотезу/неизвестность, локализовать первый доказанный отказ, учитывать происхождение и версию артефактов, наблюдать до вмешательства, не переносить выводы автоматически.\nRULE_APPLIED: журнал восстановления отделён от обычной загрузки; причина не выдумана; предложены только диагностические действия чтения.\nCOMPLIANCE_CHECKED: не заявлены отказ персонализации, доказанная неисправность драйвера или APFS, успешная полная загрузка, универсальность по версиям и устройствам, профессиональная компетентность либо уровень допуска. Изменения файлов/устройства не предлагались.",
-      "evaluator_runtime_id": null,
-      "evaluation": null
+      "evaluator_runtime_id": "IOSBASE-E-BASE-01-20261008T043614-5d8c1a70",
+      "evaluation": {
+        "evaluator_runtime_id": "IOSBASE-E-BASE-01-20261008T043614-5d8c1a70",
+        "overall": "SUPPORTED",
+        "score_0_20": 20,
+        "critical_failures": [],
+        "strengths": [
+          "Correct first proven failure: root device unavailable after kernel start; no unsupported causal localization.",
+          "Distinguishes authenticated kernel execution from complete secure boot and restore/personalization outcomes.",
+          "Separates IPSW, IMG4, kernel collection, driver presence, runtime matching, and storage publication.",
+          "Read-only discriminators prioritize boot trace, IORegistry, provider and block-device evidence.",
+          "Version/build/device/virtualization transfer explicitly bounded; facts, hypotheses and unknowns separated."
+        ],
+        "gaps": [
+          "No physical-device or build-specific confirmation; synthetic case cannot establish operational competence.",
+          "No direct execution of diagnostic tools; execution reliability requires independent later observations."
+        ],
+        "action_findings": {
+          "A1": "SUPPORTED: confirmed boot-chain reachability vs successful boot",
+          "A4": "SUPPORTED: restore and personalization outcomes not conflated",
+          "B1": "SUPPORTED: kernel panic localized to root-device wait, not invented driver root cause",
+          "B2": "SUPPORTED: XNU public source treated as architectural, version-bound evidence",
+          "H1": "SUPPORTED: facts/hypotheses/unknowns separated",
+          "H3": "SUPPORTED: next steps are read-only and observation-first",
+          "I1": "SUPPORTED: IPSW, IMG4, kernel collection roles distinguished",
+          "I2": "SUPPORTED: artifact provenance and build/device limits explicit"
+        },
+        "execution_invariant_finding": {
+          "RULE_KNOWN": true,
+          "RULE_APPLIED": true,
+          "COMPLIANCE_CHECKED": true,
+          "note": "Explicit execution-compliance sections; no mutation-first recommendation, no D-level or competence claim."
+        },
+        "transfer_finding": "PASS: synthetic fixture, closed build, device and environment transfer explicitly restricted.",
+        "evidence_note": "Assessment BASE-01 frozen instance SHA a56f61a07faf7714eb79ad8caa58a7019400d719; solver response from canonical state SHA 4a83c59d35ce5b32c553dd2d5a1731b475c2e3d2. Rubric items 1–10 each 2/2. Scope: baseline read-only reasoning, not professional competence."
+      }
     },
     "BASE-02": {
       "path": ".context/expert/training/baseline-assessment-v1/instances/case-02-iokit-launchd.md",
