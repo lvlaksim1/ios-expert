@@ -23,6 +23,8 @@ Updated: 2026-10-07
 - PP-RM/GitHub run 2 result: `RESULT.md status: PASS`; crash effect reconciled by a fresh runtime without duplicate effect
 - assessment preparation/solver separation: `IOS-EXPERT-RUNTIME-SEPARATION-001` = PASS; P1/P2 and S1/S2 unique; `P ∩ S = ∅`; verifier 18/18
 - real baseline assessment: infrastructure gate unblocked; assessment instances may now run under v0.3
-- lifecycle state: `BASELINE_ASSESSMENT_PREPARATION`
+- lifecycle state: `BASELINE_ASSESSMENT_RUNNING`
 
 The source Project Manager remains a separate active/project-local identity and was not replaced or modified.
+
+- baseline assessment: `IOS-BASELINE-001` frozen at commit `50d239f4f4cf6b5a2af089072479652e8f97c26d`; 4 synthetic read-only cases; separate solver/evaluator Scheduled Task runtimes; no automatic qualification effect.
