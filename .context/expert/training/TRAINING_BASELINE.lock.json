@@ -1,20 +1,36 @@
 {
-  "baseline": "EXPERT-TRAINING-v0.2",
-  "status": "research-audited-not-yet-ios-validated",
+  "baseline": "EXPERT-TRAINING-v0.3",
+  "status": "static-audit-pass-runtime-separation-pass-ios-baseline-enabled",
   "source_repository": "lvlaksim1/supervisor",
+  "baseline_file": ".context/research/expert-training/BASELINE-v0.3.md",
+  "baseline_commit": "3a30a043ac3daf669ffb3379f8562125e1d4870f",
   "source_files": {
-    "01-profession-model.md": "14b5c2389d000c34bd07c9445ed4818bcaec046a",
-    "02-diagnostics.md": "70f764571d53e86fbcc4d6088002f1cccffd4ed0",
-    "03-learning-program.md": "d93f10e3972ac6ca13c249251dea15e2918dacbc",
-    "04-learning-model.md": "9b90f8d10e537d64900c9e2319d6da6d2585e4f3",
-    "05-assessment-and-competence.md": "b06df9e0ac0055559b32dd3e883cb0fabb8f53bb",
-    "06-experience-cycle.md": "0dfe329463b07d99e60c1f1e70e2eebe18a08630",
-    "07-continuous-qualification.md": "600eb49044768ad15f5df6f12810a73570d2aa1f",
-    "08-normative-process.md": "d530e774c21cf8c9cf977a64965e876aa9ed2ca6"
+    "01-profession-model.md": "ad3923554868114dae5247ccfaf3aecab9bb5e1b",
+    "02-diagnostics.md": "41074ec472bf9c086d26c8c43494052ddbeac37d",
+    "03-learning-program.md": "2d41b7931f5ecf66feef647cdbc6cbe60a701e3d",
+    "04-learning-model.md": "b0f5f69cc3d62d5224b5e6a41be284a1af3f3783",
+    "05-assessment-and-competence.md": "924969f33f6d0628c441f11ab9dc798b988b759f",
+    "06-experience-cycle.md": "d742953d863c3fa711c2b7be310581ab36dcc287",
+    "07-continuous-qualification.md": "94a17ca6814054e8ee69ea678d617dc3e1153168",
+    "08-normative-process.md": "20f0bfd2ab9ad8b42e8ef793a4166d2ed855acc1"
+  },
+  "audit_files": {
+    "requirements-registry-v0.3.md": "b4eb1d17b5963e3428da641d12c077a0f72d7244",
+    "traceability-matrix-v0.3.md": "e9cccdc37d49a5f31802deb01f159e61c2a9c0aa",
+    "contradiction-register-v0.3.md": "1dd92f12217ce7585ece76845b23eb981d43bff9",
+    "process-model-v0.3.md": "3131f592af0ddb58219afc8532e8b4376e152440",
+    "adversarial-scenarios-v0.3.md": "18788ad83c8111d6c0426c76a29dccb971fbd06c"
+  },
+  "runtime_gates": {
+    "IOS-EXPERT-PP-RM-GITHUB-002": "PASS",
+    "IOS-EXPERT-RUNTIME-SEPARATION-001": "PASS"
   },
   "runtime_constraints": {
     "long_running_mechanism": "PP-RM",
     "durable_state": "GitHub",
-    "excluded": ["ND-RM", "ChatGPT Library"]
+    "excluded": [
+      "ND-RM",
+      "ChatGPT Library"
+    ]
   }
 }
