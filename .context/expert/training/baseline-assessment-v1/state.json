@@ -1,0 +1,58 @@
+{
+  "schema": "ios-expert-baseline-assessment-v1",
+  "assessment_id": "IOS-BASELINE-001",
+  "status": "SOLVING",
+  "target_profile": "0.2",
+  "profession_map": "0.3.0",
+  "training_baseline": "EXPERT-TRAINING-v0.3",
+  "qualification_effect": "NONE_PENDING_REVIEW",
+  "preparation_runtime_ids": [
+    "IOSBASE-P-20261008T0300-7c4e21a9"
+  ],
+  "solver_runtime_ids": [],
+  "evaluator_runtime_ids": [],
+  "phase": "SOLVE_BASE_01",
+  "cases": {
+    "BASE-01": {
+      "path": ".context/expert/training/baseline-assessment-v1/instances/case-01-secureboot-xnu-artifacts.md",
+      "status": "FROZEN",
+      "solver_runtime_id": null,
+      "response": null,
+      "evaluator_runtime_id": null,
+      "evaluation": null
+    },
+    "BASE-02": {
+      "path": ".context/expert/training/baseline-assessment-v1/instances/case-02-iokit-launchd.md",
+      "status": "FROZEN",
+      "solver_runtime_id": null,
+      "response": null,
+      "evaluator_runtime_id": null,
+      "evaluation": null
+    },
+    "BASE-03": {
+      "path": ".context/expert/training/baseline-assessment-v1/instances/case-03-apfs-evidence.md",
+      "status": "FROZEN",
+      "solver_runtime_id": null,
+      "response": null,
+      "evaluator_runtime_id": null,
+      "evaluation": null
+    },
+    "BASE-04": {
+      "path": ".context/expert/training/baseline-assessment-v1/instances/case-04-signing-dyld-security.md",
+      "status": "FROZEN",
+      "solver_runtime_id": null,
+      "response": null,
+      "evaluator_runtime_id": null,
+      "evaluation": null
+    }
+  },
+  "invariants": {
+    "P_intersection_S_must_be_empty": true,
+    "assessment_instances_frozen_before_solver": true,
+    "solver_must_not_modify_instance_files": true,
+    "evaluator_runtime_separate_from_solver": true,
+    "one_case_transition_per_wake": true,
+    "no_D_promotion": true,
+    "no_G_promotion_automatic": true
+  }
+}
