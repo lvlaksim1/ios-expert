@@ -1,0 +1,46 @@
+{
+  "schema": "ios-expert-learning-cycle-state-v1",
+  "cycle": "CYCLE-002",
+  "created_date": "2026-10-14",
+  "phase": "FROZEN_PENDING_PRETEST",
+  "assessment_status": "NOT_STARTED",
+  "qualification_before": {
+    "D": 0,
+    "G": 0
+  },
+  "qualification_after": null,
+  "source_cycle": "CYCLE-001",
+  "freeze_verified": true,
+  "freeze_source": "GitHub main",
+  "frozen_documents": {
+    "PLAN.md": "aabbf5f022954d8cf233cc54c67c56c9e8f12923",
+    "PRETEST.md": "ece9aaab1c27971f735f79fc399163e6e8901a85",
+    "POSTTEST.md": "d526ed52009e033db8fa32324e007a77668cec04"
+  },
+  "readback": {
+    "plan": "PASS",
+    "pretest": "PASS",
+    "posttest": "PASS"
+  },
+  "library": {
+    "directories_created": true,
+    "files_uploaded": false,
+    "reason": "container_session_unavailable",
+    "local_files_in_working_container": true
+  },
+  "pretest_run_id": null,
+  "learn_run_id": null,
+  "posttest_run_id": null,
+  "evaluation_run_id": null,
+  "finalize_run_id": null,
+  "next_action": "ASSIGN_INDEPENDENT_PRETEST_WITH_ONLY_PLAN_AND_PRETEST",
+  "limits": {
+    "max_parallel_tasks": 5,
+    "min_external_request_gap_sec": 5,
+    "max_github_ocb_attempts": 3
+  },
+  "github_publication_optional_until_required": true,
+  "modifies_ios_runtime": false,
+  "modifies_legacy_pp_rm": false,
+  "notes": "Freeze verified through GitHub direct readback. Do not assert Library materialization or independent execution. Prescribed order PRETEST > LEARN > POSTTEST > EVALUATE > FINALIZE. D0/G0 unchanged."
+}
